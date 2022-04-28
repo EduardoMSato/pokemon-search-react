@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
+import HomePage from './pages/home';
 
 function App() {
   return (
     <div className="App">
-      <Button>Click Me</Button>
+      {/* <Button>Click me</Button> */}
+      <HomePage/>
     </div>
   );
 }
