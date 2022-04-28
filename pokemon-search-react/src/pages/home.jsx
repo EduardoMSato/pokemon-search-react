@@ -4,6 +4,17 @@ import PokemonData from '../components/PokemonData';
 import Search from '../components/Search';
 import { fetchPokemon } from '../services/getPokemon';
 
+const spinnerStyle = {
+    width: '10rem',
+    height: '10rem',
+    borderWidth: '1rem',
+}
+
+const spinnerWrapperStyle = {
+    textAlign: 'center',
+    marginTop: '50px',
+}
+
 export default function HomePage(){
 
     const [pokemon, setPokemon] = React.useState();
@@ -25,8 +36,8 @@ export default function HomePage(){
             <Search getPokemon={getPokemon}/>
 
             {loading ? (
-                <div>
-                    <Spinner animation="border"/>
+                <div style={spinnerWrapperStyle}>
+                    <Spinner style={spinnerStyle} animation="border"/>
                 </div>
             ):null}
             {!loading && pokemon ?(
