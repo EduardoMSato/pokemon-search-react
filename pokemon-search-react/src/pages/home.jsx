@@ -1,4 +1,5 @@
 import React from 'react';
+import PokemonData from '../components/PokemonData';
 import Search from '../components/Search';
 import { fetchPokemon } from '../services/getPokemon';
 
@@ -11,6 +12,7 @@ export default function HomePage(){
         setLoading(true);
         const response = await fetchPokemon(query);
         const results = await response.json();
+        console.log(results);
         setPokemon(results);
         setLoading(false);
     }
@@ -19,9 +21,13 @@ export default function HomePage(){
         <div>
             <Search getPokemon={getPokemon}/>
             {!loading && pokemon ?(
-                <div>
-                    <h1>{pokemon.name}</h1>
-                </div>
+                <PokemonData 
+                    name={pokemon.name}
+                    sprite={pokemon.sprites.front_default}
+                    abilities={pokemon.abilities}
+                    stats={pokemon.stats}
+                    types={pokemon.types}
+                    />
             ): null}
         </div>
     )
