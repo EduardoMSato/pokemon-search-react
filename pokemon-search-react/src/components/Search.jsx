@@ -7,7 +7,6 @@ export default function Search(props){
 
     return (
         <Container>
-            <h1>{search}</h1>
             <Form className="mt-2">
 
                 <Col sm={10} className="my-1">
